@@ -1,0 +1,19 @@
+{
+  "name": "breakout-in-javascript",
+  "version": "1.0.0",
+  "main": "breakout.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielakarwowska/Breakout-in-JavaScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielakarwowska/Breakout-in-JavaScript/issues"
+  },
+  "homepage": "https://github.com/danielakarwowska/Breakout-in-JavaScript#readme",
+  "description": ""
+}
