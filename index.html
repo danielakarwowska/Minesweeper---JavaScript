@@ -6,15 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minesweeper game</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-
+    
 </head>
 <body>
     <h1>Minesweeper</h1>
+    <div class="box">
 <h4>Classic minesweeper game. Built with JS </h4>
-<form>
-    <button onclick="start();return false;">Start</button>
-    <div id="board"></div>
-  </form>
+<div id="field"></div>
+<br>
+<div id="lost" style="display: none;">
+<h3>You got bombed!</h3>
+<button id="new-game-button" type="button" onclick="reload()">Start Again</button>
+</div>  
+</div>
     <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
