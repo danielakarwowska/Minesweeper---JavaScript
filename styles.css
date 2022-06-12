@@ -25,82 +25,12 @@ h4{
   margin-top:5px;
   padding-top:0px;
 }
-
-#container{
-  width:200px;
-  margin:20px auto;
+button {
+    width: 100px;
+    height: 30px;
+    background-color:rgb(195, 195, 195);
+    color: black;
+    font-weight: bolder;
+    border-radius: 20px 20px 20px 20px;
 }
 
-#container:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
-}
-
-.box{
-  display:block;
-  float:left;
-  width:20px;
-  height:20px;
-  background:#333;
-  border: 1px solid #222;
-  border-radius: 2px;
-  background-image: -webkit-linear-gradient(top, #666, #333);
-  background-image: -moz-linear-gradient(top, #666, #333);
-  background-image: -o-linear-gradient(top, #666, #333);
-  background-image: -ms-linear-gradient(top, #666, #333);
-  background-image: linear-gradient(to bottom, #666, #333);
-  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.75);
-  box-shadow: 0 0 5px rgba(0,0,0,0.75);
-  text-align:center;
-  line-height:20px;
-  font-size:12px;
-  font-weight:bold;
-  color:#ff2e2e;
-}
-
-.box:hover{
-  cursor:pointer;
-  background:#777;
-}
-
-span.opened{
-  background:#777;
-}
-
-span.checked,span.checked:hover{
-background-image: -webkit-linear-gradient(top, #ba0000, #610000);
-background-image: -moz-linear-gradient(top, #ba0000, #610000);
-background-image: -o-linear-gradient(top, #ba0000, #610000);
-background-image: -ms-linear-gradient(top, #ba0000, #610000);
-background-image: linear-gradient(to bottom, #ba0000, #610000);
-}
-
-span.bomb{
-  display:inline-block;
-  width:10px;
-  height:10px;
-  margin-top:4px;
-  border:1px solid #ffea00;
-  border-radius:5px;
-  background:#f00303;
-}
-
-a#again{
-  clear:both;
-  display:block !important;
-  text-decoration:none;
-  background:#fff;
-  width:200px;
-  height:50px;
-  text-align:center;
-  line-height:50px;
-  font-size:13px;
-  color:#333;
-  font-weight:bold;
-  border-radius:5px;
-  margin:auto;
-}
