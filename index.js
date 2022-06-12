@@ -1,6 +1,5 @@
 const button = document.querySelector("button");
 const showBoard = document.querySelector("#board");
-showBoard.innerHTML = text;
 const arr = [];
 
 const show = () => {
@@ -10,6 +9,7 @@ const show = () => {
       text += arr[y][y] + "";
     }
     text += ""; //after each line, to the next line
+    showBoard.innerHTML = text;
   }
 };
 
