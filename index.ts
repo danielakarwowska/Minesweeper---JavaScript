@@ -1,26 +1,25 @@
 const grid:HTMLDivElement = document.querySelector(".grid");
-const flagsLeft:HTMLSpanElement = document.querySelector("#flags-left");
+const flagsLeft:HTMLSpanElement= document.querySelector("#flags-left");
 const result:HTMLDivElement = document.querySelector("#result");
-let width:Number = 10;
+let width = 10;
 let bombAmount:Number = 20;
-let flags:Number = 0;
-let squares:[]= [];
+let flags:Number|string = 0;
+let squares= [];
 let isGameOver:Boolean = false;
-
 //create Board
 const createBoard = () => {
   flagsLeft.innerHTML = bombAmount;
 
   //get shuffled game array with random bombs
-  const bombsArray = Array(bombAmount).fill("bomb");
-  const emptyArray = Array(width* width - bombAmount).fill("valid");
-  const gameArray = emptyArray.concat(bombsArray);
-  const shuffledArray = gameArray.sort(() => Math.random() - 0.5);
+  const bombsArray:Number[] = Array(bombAmount).fill("bomb");
+  const emptyArray:Number[] = Array(width* width - bombAmount).fill("valid");
+  const gameArray:Number[] = emptyArray.concat(bombsArray);
+  const shuffledArray:Number[] = gameArray.sort(() => Math.random() - 0.5);
 
-  for (let i = 0; i < width * width; i++) {
-    const square = document.createElement("div");
-    square.setAttribute("id", i);
-    square.classList.add(shuffledArray[i]);
+  for (let i:string|number = 0; i < width * width; i++) {
+    const square:HTMLDivElement = document.createElement("div");
+    square.setAttribute("id", i?);
+    square.classList.add(shuffledArray?[i])
     grid.appendChild(square);
     squares.push(square);
 
@@ -36,8 +35,8 @@ const createBoard = () => {
 
   for (let i = 0; i < squares.length; i++) {
     let total = 0;
-    const isLeftEdge = i % width === 0;
-    const isRightEdge = i % width === width - 1;
+    const isLeftEdge:boolean = i % width === 0;
+    const isRightEdge:boolean = i % width === width - 1;
 
     if (squares[i].classList.contains("valid")) {
       if (i > 0 && !isLeftEdge && squares[i - 1].classList.contains("bomb"))
@@ -76,7 +75,7 @@ const createBoard = () => {
 };
 createBoard();
 
-function addFlag(square) {
+const addFlag = (square: HTMLDivElement) => {
   if (isGameOver) return;
   if (!square.classList.contains("checked") && flags < bombAmount) {
     if (!square.classList.contains("flag")) {
@@ -100,7 +99,7 @@ const click = (square) => {
   if (square.classList.contains("checked") || square.classList.contains("flag"))
     return;
   if (square.classList.contains("bomb")) {
-    gameOver(square);
+    gameOver();
   } else {
     let total = square.getAttribute("data");
     if (total != 0) {
@@ -117,7 +116,7 @@ const click = (square) => {
   square.classList.add("checked");
 };
 
-const checkSquare = (square, currentId) => {
+const checkSquare = (currentId) => {
   const isLeftEdge = currentId % width=== 0;
   const isRightEdge = currentId % width === width - 1;
 
@@ -167,7 +166,7 @@ const checkSquare = (square, currentId) => {
 };
 
 //game over
-const gameOver = (square) => {
+const gameOver = () => {
   result.innerHTML = "BOOM! Game Over!";
   isGameOver = true;
 
