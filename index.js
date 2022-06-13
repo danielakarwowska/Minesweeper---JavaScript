@@ -16,8 +16,8 @@ const createBoard = () => {
     const shuffledArray = gameArray.sort(() => Math.random() - 0.5);
     for (let i = 0; i < width * width; i++) {
         const square = document.createElement("div");
-        square.setAttribute("id", i);
-        square.classList.add(shuffledArray[i]);
+        square.setAttribute("id", i ?  : );
+        square.classList.add(shuffledArray ? [i] : );
         grid.appendChild(square);
         squares.push(square);
         square.addEventListener("click", (e) => {
@@ -62,7 +62,7 @@ const createBoard = () => {
     }
 };
 createBoard();
-function addFlag(square) {
+const addFlag = (square) => {
     if (isGameOver)
         return;
     if (!square.classList.contains("checked") && flags < bombAmount) {
@@ -80,7 +80,7 @@ function addFlag(square) {
             flagsLeft.innerHTML = bombAmount - flags;
         }
     }
-}
+};
 const click = (square) => {
     let currentId = square.id;
     if (isGameOver)
@@ -88,7 +88,7 @@ const click = (square) => {
     if (square.classList.contains("checked") || square.classList.contains("flag"))
         return;
     if (square.classList.contains("bomb")) {
-        gameOver(square);
+        gameOver();
     }
     else {
         let total = square.getAttribute("data");
@@ -109,7 +109,7 @@ const click = (square) => {
     }
     square.classList.add("checked");
 };
-const checkSquare = (square, currentId) => {
+const checkSquare = (currentId) => {
     const isLeftEdge = currentId % width === 0;
     const isRightEdge = currentId % width === width - 1;
     setTimeout(() => {
@@ -157,7 +157,7 @@ const checkSquare = (square, currentId) => {
     }, 10);
 };
 //game over
-const gameOver = (square) => {
+const gameOver = () => {
     result.innerHTML = "BOOM! Game Over!";
     isGameOver = true;
     //show ALL the bombs
