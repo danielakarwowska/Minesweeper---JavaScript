@@ -1,5 +1,5 @@
 const grid:HTMLDivElement = document.querySelector(".grid");
-const flagsLeft:HTMLSpanElement= document.querySelector("#flags-left");
+const flagsLeft:HTMLDivElement= document.querySelector(".flags-left");
 const result:HTMLDivElement = document.querySelector("#result");
 let width = 10;
 let bombAmount:Number = 20;
@@ -19,7 +19,7 @@ const createBoard = () => {
   for (let i:string|number = 0; i < width * width; i++) {
     const square:HTMLDivElement = document.createElement("div");
     square.setAttribute("id", i?);
-    square.classList.add(shuffledArray?[i])
+    square.classList.add(shuffledArray?[i]);
     grid.appendChild(square);
     squares.push(square);
 
